@@ -1,0 +1,26 @@
+<h1>Bonjour</h1>
+
+<div [style.backgroundColor]="color">
+{{msg}}
+</div>
+<input type="submit" (click)="showMsg()" value="showmsg">
+<div *ngIf="ecole=='esprt'">
+
+<h1>esprit</h1>
+
+</div>
+
+<div *ngFor="let p of listProdcut">
+
+{{p.id}}
+{{p.title}}
+{{p.price}}
+{{p.like}}
+<span *ngIf="p.quantity==0">
+<input type="submit"  value="buy" [disabled]="true">
+</span>
+<span *ngIf="p.quantity!=0">
+  <input type="submit"  value="buy" [disabled]="false">
+  </span>
+  <input type="submit"  value="buy" [disabled]="p.quantity==0">
+</div>
