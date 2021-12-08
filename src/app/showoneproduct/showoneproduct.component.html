@@ -1,0 +1,17 @@
+<div *ngFor="let p of oneproduct; let i=index" >
+
+  <div [ngStyle]="{'backgroundColor': p.quantity==0 ?'red':'pink'}" >
+    {{p.id}}
+    {{p.title}}
+    {{p.like}}
+    {{p.price}}
+  </div>
+  <input type="submit" value="buy"
+         [ngClass]="{'btn btn-danger':p.quantity==0,
+       'btn btn-success':p.quantity!=0}" >
+       <input type="submit" value="like"
+         [ngClass]="{'btn btn-danger':p.quantity==0,
+       'btn btn-success':p.quantity!=0}"  (click)="sendNotifToparent(i)">
+  </div>
+
+

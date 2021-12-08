@@ -1,0 +1,14 @@
+<p>offre-emploi works!</p>
+<input type="text" [(ngModel)]="entreprise" >
+<div *ngFor="let offre of listeEmploi">
+<div *ngIf="offre.entreprise==entreprise || entreprise==''">
+  {{offre.entreprise}}
+  {{offre.etat}}
+  {{offre.reference}}
+  {{offre.titre}}
+
+<input type="submit" value="postuler" [disabled]="!offre.etat">
+</div>
+</div>
+<input type="submit" value="Bilan" (click)="Bilan()">
+{{nboffre}}

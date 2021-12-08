@@ -14,12 +14,21 @@ listProdcut=[
   {id: 2, title: "T-shirt 2", price: 21, quantity: 10, like: 0},
   {id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0},
   ];
-  constructor() { }
+  constructor() {
+    console.log('constructor');
+  }
 
   ngOnInit(): void {
+    console.log('ngOnInit');
   }
   showMsg(){
     alert("4infi1");
   }
 
+  test(){
+    alert('bonjour');
+  }
+  changeColor(){
+    this.color="blue";
+  }
 }

@@ -3,6 +3,17 @@
 <div [style.backgroundColor]="color">
 {{msg}}
 </div>
+<input type="text" [(ngModel)]="color"  >
+<input type="submit" (click)="changeColor()" value="change Color">
+<br>
+<br>
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br>
+<input type="submit" (click)="test()" value="msg">
+{{color}}
 <input type="submit" (click)="showMsg()" value="showmsg">
 <div *ngIf="ecole=='esprt'">
 
@@ -10,17 +21,17 @@
 
 </div>
 
-<div *ngFor="let p of listProdcut">
-
+<div *ngFor="let p of listProdcut" >
+<div [ngStyle]="{'backgroundColor': p.quantity==0 ?'red':'pink'}" >
 {{p.id}}
 {{p.title}}
 {{p.price}}
 {{p.like}}
-<span *ngIf="p.quantity==0">
-<input type="submit"  value="buy" [disabled]="true">
-</span>
-<span *ngIf="p.quantity!=0">
-  <input type="submit"  value="buy" [disabled]="false">
-  </span>
-  <input type="submit"  value="buy" [disabled]="p.quantity==0">
 </div>
+<input type="submit" value="buy"
+       [ngClass]="{'btn btn-danger':p.quantity==0,
+       'btn btn-success':p.quantity!=0}" >
+
+  </div>
+
+

@@ -1,0 +1,27 @@
+
+
+<p>form works!</p>
+<form #f="ngForm">
+
+<label>name</label>
+<input type="text" required minlength="3" name="esprit infini" ngModel #n="ngModel">
+
+<div *ngIf="n.invalid || n.touched">
+<div *ngIf="n.errors?.required">
+required
+</div>
+<div *ngIf="n.errors?.minlength">
+  min
+  </div>
+</div>
+<label>surname</label>
+<input type="text" name="surname" ngModel>
+<!-- <div *ngIf="f.invalid">
+<input type="submit" value="send" (click)="showF(f)" disabled=true>
+</div>
+<div *ngIf="f.valid">
+  <input type="submit" value="send" (click)="showF(f)" >
+  </div> -->
+  <input type="submit" value="envoyer" (click)="showF(n)"
+   [disabled]="!f.valid" >
+</form>

@@ -1,0 +1,16 @@
+<p>exercice works!</p>
+<input type="number" [(ngModel)]="price" >
+<div *ngFor="let p of listProdcut" >
+  <div *ngIf="p.price<price || price==-1">
+  <div [ngStyle]="{'backgroundColor': p.quantity==0 ?'red':'pink'}" >
+    {{p.id}}
+    {{p.title}}
+
+    {{p.like}}
+    {{p.price}}
+  </div>
+  <input type="submit" value="buy"
+         [ngClass]="{'btn btn-danger':p.quantity==0,
+       'btn btn-success':p.quantity!=0}" >
+  </div>
+</div>
