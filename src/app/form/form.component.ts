@@ -1,3 +1,4 @@
+import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:ProductService) { }
 
   ngOnInit(): void {
+  }
+  addP(f:any){
+this.service.addProduct(f).subscribe(
+  ()=>{alert('gooooodddd')}
+);
   }
   showF(f:any){
     console.log(f);

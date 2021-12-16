@@ -6,6 +6,9 @@
     {{p.like}}
     {{p.price}}
   </div>
+  <a routerLink="pc/detail/{{p.title}}">detail</a>
+  <a routerLink="/update/{{p.id}}">update</a>
+  <a routerLink="/delete/{{p.id}}">delete</a>
   <input type="submit" value="buy"
          [ngClass]="{'btn btn-danger':p.quantity==0,
        'btn btn-success':p.quantity!=0}" >

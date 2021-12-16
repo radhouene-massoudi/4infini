@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +15,11 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ShowoneproductComponent } from './showoneproduct/showoneproduct.component';
 import { FormComponent } from './form/form.component';
-
+import { NotfoundComponent } from './notfound/notfound.component';
+import { DeetailComponent } from './deetail/deetail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +33,17 @@ import { FormComponent } from './form/form.component';
     ParentComponent,
     ChildComponent,
     ShowoneproductComponent,
-    FormComponent
+    FormComponent,
+    NotfoundComponent,
+    DeetailComponent,
+    UpdateProductComponent,
+    DeleteproductComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
